@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface AuctionItemRepository extends JpaRepository<AuctionItem,Long> {
     List<AuctionItem> findByDescriptionContaining(String description);
+    List<AuctionItem> findByTypeContaining(String type);
     List<AuctionItem> findBySuccessfulBidAmountLessThan(double maxBidValue);
+    List<AuctionItem> findByDescriptionAndType(String description, String type);
 
 }

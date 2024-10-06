@@ -8,5 +8,7 @@ import java.util.List;
 public interface AuctionItemService {
     List<AuctionItem> getAllAuctionItems();
     List<AuctionItem> getAuctionItemsByDescription(String description);
+    List<AuctionItem> getAuctionItemsByType(String type);
+    List<AuctionItem> getAuctionItemsByDescriptionAndType(String description, String type);
     List<AuctionItem> getAuctionItemWithSuccessfulBidLessThan(Double maxBidValue);
 }

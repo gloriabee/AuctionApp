@@ -26,6 +26,16 @@ public class AuctionItemServiceImpl implements AuctionItemService {
     }
 
     @Override
+    public List<AuctionItem> getAuctionItemsByType(String type) {
+        return auctionItemRepository.findByTypeContaining(type);
+    }
+
+    @Override
+    public List<AuctionItem> getAuctionItemsByDescriptionAndType(String description, String type) {
+        return auctionItemRepository.findByDescriptionAndType(description,type);
+    }
+
+    @Override
     public List<AuctionItem> getAuctionItemWithSuccessfulBidLessThan(Double maxBidValue) {
         return auctionItemRepository.findBySuccessfulBidAmountLessThan(maxBidValue);
     }
